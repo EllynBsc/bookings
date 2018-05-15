@@ -1,0 +1,47 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <h2>Your Bookings</h2>
+      <p>You have : <%= @bookings.count %> bookings</p>
+      <!-- YOUR TRIPS, Your bookings to travel -->
+      <div class="card">
+        <div class="card-item">
+          <% @bookings.each do |booking| %>
+          <%= booking.status %>
+          <%= booking.description %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <h2>Your own flats</h2>
+        <p>You have : <%= @flats.count %> flats</p>
+        <!-- BOOKINGS DONE ON YOUR FLAT -->
+        <div class="row">
+          <% @flats.each do |flat| %>
+          <div class="col-xs-6">
+            <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://source.unsplash.com/random/200/200');">
+              <div class="card-item">
+                <h2><%= flat.name.capitalize%></h2>
+                <p><%= flat.address %></p>
+                <p><%= link_to 'destroy', flat_path(flat), method: :delete, class: "btn btn-primary" %></p>
+                <p><%= link_to 'edit', edit_flat_path(flat), class: "btn btn-primary" %></p>
+
+
+                <% flat.bookings.each do |booking| %>
+                <p><%= booking.description %> </p>
+                <p><%= booking.status %> </p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

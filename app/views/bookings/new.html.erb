@@ -2,13 +2,19 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
+      <h2 class="text-center">Create your new booking</h2>
+      <div class="form text-center">
+
       <%= simple_form_for [@flat, @booking] do |f| %>
-      <%= f.input :description %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.button :submit  %>
+      <%= f.input :description, input_html: { class: 'input-form' }  %>
+      <%= f.input :start_date,  as: :string, input_html: { class: 'datepicker input-form' } %>
+      <%= f.input :end_date, as: :string, input_html: { class: 'datepicker input-form' } %>
+      <%= f.button :submit,  class: "btn-form input-form"  %>
+
       <% end %>
+
     </div>
+  </div>
   </div>
 </div>
 

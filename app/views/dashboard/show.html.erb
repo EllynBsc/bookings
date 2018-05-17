@@ -8,9 +8,10 @@
       <div class="card">
         <div class="card-item">
           <% @bookings.each do |booking| %>
-          <%= booking.status %>
-          <%= booking.description %>
-
+          <p><%= booking.status %></p>
+          <p><%= booking.description %></p>
+          <p><%= link_to "edit booking", edit_flat_booking_path(booking.flat, booking) %></p>
+            <p><%= link_to "destroy booking", flat_booking_path(booking.flat, booking), method: :delete %></p>
           <% end %>
         </div>
       </div>

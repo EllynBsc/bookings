@@ -19,6 +19,7 @@
     <div class="row">
       <div class="col-xs-6">
         <h2>Your own flats</h2>
+         <p><%= link_to 'Add a new flat', new_flat_path, class: "btn-grey" %></p>
         <p>You have : <%= @flats.count %> flats</p>
         <!-- BOOKINGS DONE ON YOUR FLAT -->
         <div class="row">

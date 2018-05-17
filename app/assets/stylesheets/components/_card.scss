@@ -5,29 +5,41 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(20,240,240,0.7);
+  background-color: rgb(210,210,210);
   margin: 15px 15px;
 }
 
 
 .card {
-  background-color: rgb(200,200,200);
+  margin-top: 20px;
+  background-position: center;
+  background-size: cover !important;
+  height: 175px;
+  background-color: rgb(210,210,210);
   border-radius:3px;
   color: white;
-  padding:20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  h2 {
+  position: relative;
+}
+
+.card-title {
   font-weight: bold;
-  }
-  p {
-    font-weight: lighter;
-  }
+  position: absolute;
+  top: 0px;
+  left: 10px;
 }
 
-.card-item {
-  flex: 0 1 auto;
-  text-align: center;
+
+.card-address {
+  font-weight: lighter;
+  position: absolute;
+  bottom: 0px;
+  left: 10px
 }
 
+
+.card-button {
+  font-weight: lighter;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}

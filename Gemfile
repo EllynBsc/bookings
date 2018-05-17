@@ -3,7 +3,9 @@ ruby '2.4.3'
 
 
 gem 'devise'
+gem 'scrollify'
 gem 'figaro'
+gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'

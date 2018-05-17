@@ -1,26 +1,44 @@
+<div class="section">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://source.unsplash.com/random');">
+    <div class="banner-content">
+      <h1>Airbnb clone</h1>
+      <p>Learn to code with us in Bali</p>
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://source.unsplash.com/random');">
-  <div class="banner-content">
-    <h1>Airbnb clone</h1>
-    <p>Learn to code with us in Bali</p>
-
-    <%= link_to "start now", flats_path, class: "btn btn-primary btn-lg" %>
+      <%= link_to "start now", flats_path, class: "btn-grey" %>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  <%= link_to 'Add a new flat', new_flat_path, class: "btn btn-primary" %>
-  <div class="row">
-    <% @flats.each do |flat| %>
-    <div class="col-xs-6">
-      <div class="box">
-        <h2><%= flat.name %></h2>
-        <p>  <%= flat.address %></p>
-
-        <p> <%= link_to 'book', new_flat_booking_path(flat, @booking), class: "btn btn-primary" %></p>
-
+<div class="section">
+  <div class="container" style="height: 100vh">
+    <div class="row">
+      <% @flats.each do |flat| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <div class="card-title">
+            <h2><%= flat.name %></h2>
+          </div>
+          <div class="card-address"
+          <p>  <%= flat.address %></p>
+        </div>
+        <div class="card-button">
+          <p> <%= link_to 'book', new_flat_booking_path(flat, @booking), class: "btn-grey" %></p>
+        </div>
       </div>
     </div>
     <% end %>
   </div>
 </div>
+
+<div class="section">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://source.unsplash.com/random');">
+    <div class="banner-content">
+      <h1>Airbnb clone</h1>
+      <p>Learn to code with us in Bali</p>
+
+      <%= link_to "start now", flats_path, class: "btn-grey" %>
+    </div>
+  </div>
+</div>
+
+

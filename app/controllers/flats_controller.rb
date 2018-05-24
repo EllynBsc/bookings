@@ -38,7 +38,6 @@ class FlatsController < ApplicationController
   def update
     @flat = Flat.find(params[:id])
     @flat.update(flat_params)
-    @flat.save
     redirect_to flat_path(@flat)
   end
 

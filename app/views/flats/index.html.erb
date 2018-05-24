@@ -3,7 +3,8 @@
     <div class="banner-content">
       <h1>Airbnb clone</h1>
       <p>Learn to code with us in Bali</p>
-      <%= link_to "start now", flats_path, class: "btn-grey" %>
+      <p><%= link_to "start now", flats_path, class: "btn-grey" %></p>
+      <p><%= link_to 'see our best flats', top10_flats_path, class: "btn-grey" %></p>
     </div>
   </div>
 </div>
@@ -18,23 +19,42 @@
             <h2><%= flat.name %></h2>
             <p> <%= flat.address %></p>
           </div>
+          <% if flat.user != current_user%>
           <div class="card-button">
-          <p> <%= link_to 'book', new_flat_booking_path(flat, @booking), class: "btn-grey" %></p>
+            <button type="button" class="btn-grey" data-toggle="modal" data-target="#exampleModal">
+              Book
+            </button>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= render 'bookings/form', flat: flat, booking: @booking %>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn-grey">Book now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
-</div>
 
-<div class="section">
-  <div class="banner" style="background: #ADA996;
-background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
-background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);">
-    <div class="banner-content">
-    </div>
-  </div>
-</div>
+
 
 
 

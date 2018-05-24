@@ -5,6 +5,11 @@ class FlatsController < ApplicationController
     @booking = Booking.new
   end
 
+  def top10
+    @flats = Flat.order("created_at").first(10)
+    render :index
+  end
+
   def new
     @flat = Flat.new
   end
@@ -17,6 +22,8 @@ class FlatsController < ApplicationController
     @flat = Flat.new(flat_params)
     @flat.user = current_user
     if @flat.save
+      current_user.role = 'host'
+      current_user.save
       redirect_to flat_path(@flat)
     else
       render :new

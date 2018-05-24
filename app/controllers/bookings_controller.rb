@@ -18,7 +18,19 @@ class BookingsController < ApplicationController
     end
   end
 
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.decline!
+    # @booking.save
+    redirect_to dashboard_path
+  end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.accept!
+    # @booking.save
+    redirect_to dashboard_path
+  end
   def edit
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.find(params[:id])

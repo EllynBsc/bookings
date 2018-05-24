@@ -1,7 +1,7 @@
 class CreateBookings < ActiveRecord::Migration[5.1]
   def change
     create_table :bookings do |t|
-      t.string :status
+      t.string :status, default: 'pending'
       t.string :description
       t.datetime :start_date
       t.datetime :end_date

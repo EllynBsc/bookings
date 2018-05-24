@@ -1,39 +1,55 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-6">
-      <div class="tab-color"><h2><a href="#" class="button-js" id="booking">Your Bookings</a></h2></div>
-      <div id="booking-content-js">
-      <p>You have : <%= @bookings.count %> bookings</p>
-      <!-- YOUR TRIPS, Your bookings to travel -->
-      <div class="card">
-        <div class="card-item">
-          <% @bookings.each do |booking| %>
-              <style>
-                .red {
-                  background-color: red;
-                }
-                .green {
-                  background-color: green;
-                }
-              </style>
+   <!--  <div class="tab-color"><h2><a href="#" class="button-js" id="booking">Your Bookings</a></h2>
+    <p>You have : <%= @bookings.count %> bookings</p>
+  </div> -->
+  <!--  <div id="booking-content-js"> -->
+    <div class="col-xs-12 ">
+      <% @bookings.each do |booking| %>
+      <div class="message" >
+        <div class="avatar">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/gabriel-dehan" %>
+        </div>
+        <% if booking.status == "declined" %>
+        <% color = "red" %>
+        <% elsif booking.status == 'accept'  %>
+        <% color = 'green' %>
+        <% end %>
+        <div class="message-name">
+          <h3>Gab Dehan</h3>
+          <p>10/07/17</p>
+          <div class="<%= color %>"><%= booking.status %></div>
+        </div>
+        <div class="message-body">
+          <p><%= booking.description %>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque optio dolore ipsum voluptate deleniti et, cum fugiat provident fuga ducimus eveniet iusto ullam debitis nam vel sequi ab quam sapiente aliquid ex consectetur magni enim quo! Numquam necessitatibus illum commodi, aut, tempora nisi facilis facere error corporis itaque in earum?</%></p>
+        </div>
 
+        <div class="message-status">
+          <div class="message-btn">
+            <%= link_to "Edit ", edit_flat_booking_path(booking.flat, booking), class: "btn-grey-small" %>
+            <%= link_to "Destroy ", flat_booking_path(booking.flat, booking), method: :delete, class: "btn-grey-small"%>
+          </div>
 
-
-              <% if booking.status == "declined" %>
-                <% color = "red" %>
-              <% elsif booking.status == 'accept'  %>
-                <% color = 'green' %>
-              <% end %>
-          <p class="<%= color %> btn-grey"><%= booking.status %></p>
-          <p><%= booking.description %></p>
-          <p><%= link_to "edit booking", edit_flat_booking_path(booking.flat, booking) %></p>
-            <p><%= link_to "destroy booking", flat_booking_path(booking.flat, booking), method: :delete %></p>
-
-             <p><%= link_to "accept booking",  accept_flat_booking_path(booking.flat, booking), method: :patch, class: "btn-grey green"%></p>
-              <p><%= link_to "decline booking",  decline_flat_booking_path(booking.flat, booking), method: :patch, class: "btn-grey red" %></p>
-          <% end %>
+          <div class="message-btn">
+            <%= link_to "Accept",  accept_flat_booking_path(booking.flat, booking), method: :patch, class: "btn-grey-small"%>
+            <%= link_to "Decline",  decline_flat_booking_path(booking.flat, booking), method: :patch, class: "btn-grey-small" %>
+          </div>
         </div>
       </div>
-      </div>
-    </div>
+
+
+<% end %>
+</div>
+
+</div>
+
+
+<style>
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+</style>

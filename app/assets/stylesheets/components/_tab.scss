@@ -1,8 +1,14 @@
 .tab-color {
-  background: rgba(150,150,150, 0.3);
+  background: rgb(250,250,250);
+  padding: 40px 20px;
+  margin-top: 30px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 
 .tab-color:hover {
-  background: rgba(150,150,150, 0.8);
+  background: rgb(230,230,230);
 }

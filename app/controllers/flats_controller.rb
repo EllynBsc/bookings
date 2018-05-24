@@ -7,6 +7,7 @@ class FlatsController < ApplicationController
 
   def top10
     @flats = Flat.order("created_at").first(10)
+     @booking = Booking.new
     render :index
   end
 

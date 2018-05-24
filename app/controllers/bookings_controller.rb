@@ -12,7 +12,8 @@ class BookingsController < ApplicationController
     @booking.flat = @flat
     @booking.user = current_user
     if @booking.save
-      redirect_to dashboard_path(@flat, @booking)
+      # redirect_to dashboard_path(@flat, @booking)
+      redirect_to mytrips_path(@flat, @booking)
     else
       render :new
     end
@@ -22,14 +23,16 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.decline!
     # @booking.save
-    redirect_to dashboard_path
+    # redirect_to dashboard_path
+     redirect_to mytrips_path(@flat, @booking)
   end
 
   def accept
     @booking = Booking.find(params[:id])
     @booking.accept!
     # @booking.save
-    redirect_to dashboard_path
+    # redirect_to dashboard_path
+     redirect_to mytrips_path(@flat, @booking)
   end
   def edit
     @flat = Flat.find(params[:flat_id])
@@ -40,7 +43,8 @@ class BookingsController < ApplicationController
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      redirect_to dashboard_path(@flat, @booking)
+      # redirect_to dashboard_path(@flat, @booking)
+       redirect_to mytrips_path(@flat, @booking)
     else
       render :edit
     end
@@ -51,7 +55,8 @@ class BookingsController < ApplicationController
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to dashboard_path(@flat, @booking)
+    # redirect_to dashboard_path(@flat, @booking)
+     redirect_to mytrips_path(@flat, @booking)
   end
 
 

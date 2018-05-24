@@ -4,11 +4,11 @@
   padding: 15px 20px;
   border-radius: 5px;
   font-weight: lighter;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .btn-grey:hover {
-  opacity: 1;
+  opacity: 0.6;
   text-decoration: none;
   color: #999999;
 }
@@ -26,6 +26,4 @@
 .btn-form:hover {
   text-shadow: 0 1px 3px rgba(0,0,0,0.2);
   opacity: 1;
-  font-weight:bold;
-
 }

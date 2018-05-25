@@ -44,3 +44,19 @@
   text-decoration: none;
   color: #999999;
 }
+
+
+.btn-white {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: lighter;
+  opacity: 1;
+}
+
+.btn-white:hover {
+  opacity: 0.6;
+  text-decoration: none;
+  color: white;
+}

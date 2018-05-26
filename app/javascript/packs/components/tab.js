@@ -9,7 +9,7 @@
       let idElementOne = `${id}-content-js`;
       // idElementOne = 'booking-content-js'
       let contentOne = document.getElementById(idElementOne);
-      if (idElementOne == null) {return};
+      if (idElementOne == null) { return };
 
       contentOne.hidden = false;
 
@@ -25,5 +25,4 @@
   });
 }
 
-export { attachedTabsListener }
-
+export { attachedTabsListener };

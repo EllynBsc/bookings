@@ -10,6 +10,8 @@
   align-items: center;
   padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
+  border-top: 1px solid rgba(220,224,244,0.4);
+  padding: 20px;
 }
 
 .message:hover {
@@ -20,6 +22,7 @@
 }
 .message-body {
   flex-grow: 1;
+  text-align: justify;
 }
 .message-name {
   padding-left: 10px;

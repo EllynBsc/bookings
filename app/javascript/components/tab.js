@@ -1,4 +1,4 @@
- function attachedTabsListener() {
+function attachedTabsListener() {
   const buttons = document.querySelectorAll('.button-js');
   buttons.forEach( button => {
     button.addEventListener('click', () => {

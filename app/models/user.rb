@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :bookings
   has_many :flats
+  has_many :favorites
 
   def host?
     self.role == 'host'

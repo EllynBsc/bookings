@@ -3,12 +3,16 @@ ruby '2.4.3'
 
 
 gem 'devise'
+gem 'scrollify'
 gem 'figaro'
+gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.6'
 gem 'redis'
+gem 'twilio-ruby'
+gem 'bootstrap-datepicker-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

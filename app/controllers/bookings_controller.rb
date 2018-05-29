@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-
-
   def new
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.new
@@ -12,6 +10,8 @@ class BookingsController < ApplicationController
     @booking.flat = @flat
     @booking.user = current_user
     if @booking.save
+       message = "The booking '#{@booking.description}' was just added."
+      TwilioTextMessenger.new(message).call
       # redirect_to dashboard_path(@flat, @booking)
       redirect_to mytrips_path(@flat, @booking)
     else

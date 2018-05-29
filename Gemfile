@@ -11,6 +11,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.6'
 gem 'redis'
+gem 'twilio-ruby'
 gem 'bootstrap-datepicker-rails'
 
 gem 'autoprefixer-rails'

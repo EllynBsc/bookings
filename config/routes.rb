@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'contact/new'
+
 
   # devise_for :users
 

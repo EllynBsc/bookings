@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  get 'contact/new'
+
   # devise_for :users
+
+  resources :contacts, only: [:new, :create]
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'flats#index'
   resources :favorites, only: [:index]

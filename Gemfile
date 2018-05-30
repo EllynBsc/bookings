@@ -3,6 +3,7 @@ ruby '2.4.3'
 
 
 gem 'devise'
+gem 'mail_form'
 gem 'scrollify'
 gem 'figaro'
 gem 'jquery-rails'

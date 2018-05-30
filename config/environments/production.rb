@@ -1,7 +1,7 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
   # Verifies that versions and hashed value of the package contents in the project's package.json
-config.webpacker.check_yarn_integrity = false
+  config.webpacker.check_yarn_integrity = false
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -90,6 +90,19 @@ config.webpacker.check_yarn_integrity = false
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+
+  config.action_mailer.default_url_options = { host: 'https://bookings-playground.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'heroku.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
